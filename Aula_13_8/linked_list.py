@@ -5,6 +5,10 @@ class Node:
 
 class linkedlist:
     def __init__(self):
+        self.head = None
+
+
+    def inserir_inicio(self, data):
         novo = Node(data)
         novo.next = self.head
         novo.head = novo
