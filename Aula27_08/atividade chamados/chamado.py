@@ -23,17 +23,20 @@ class listaChamados:
 
     def __iter__(self):  #ele que chama a variável criada tipo, chama o chamado sem alterar o valor "uma nova caixinha"
         atual =self.chamado
-        posicao = 1
+    
         while atual is not None:
-            yield posicao, atual.chamado #pega o que já está lá e n perde nos loops
-            #print(atual.chamado, end =' ->')
+            yield atual.chamado
+            atual = atual.next #funfact que fiquei 30min aqui rodando infinito só pela identação
+
+    def buscar(self, chamado):
+        atual = self.chamado
+        posicao = 0
+        while atual is not None:
+            if atual.chamado == chamado:
+                return posicao
             atual = atual.next
             posicao += 1
-             #a posição veio aqui para ser chamada junto do chamado, assim permite colocar as duas informações no for como uma tupla
-            
-            # joguei o print '->' no principal já que é lá que está meu for
-    
-   
+        return -1  
             
 
 
