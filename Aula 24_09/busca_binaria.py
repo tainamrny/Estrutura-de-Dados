@@ -10,8 +10,7 @@ def busca_binaria(lista, item):
             alto = meio -1
         else:
             baixo = meio +1
-        return None
+    return None
     
 minha_lista =[10, 20, 30, 40, 80]
-print(busca_binaria(minha_lista, 40))
-print(busca_binaria(minha_lista, -1))
+print(busca_binaria(minha_lista, 20))
