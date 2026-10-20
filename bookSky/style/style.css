@@ -1,0 +1,100 @@
+/* Visual pronto. A integração será escrita em script/app.js durante a aula. */
+:root {
+  --papel: #f7f5ee;
+  --verde: #183f35;
+  --texto: #263b32;
+  --suave: #647166;
+  --linha: #dedfd3;
+  --laranja: #b3512c;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--texto); background: var(--papel); font: 15px/1.7 Arial, sans-serif; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; }
+button:disabled { opacity: .6; cursor: wait; }
+:focus-visible { outline: 3px solid var(--laranja); outline-offset: 5px; }
+.container { width: min(1200px, calc(100% - 64px)); margin-inline: auto; }
+.pular { position: fixed; top: -100px; left: 16px; padding: 12px; color: white; background: var(--verde); z-index: 10; }
+.pular:focus { top: 12px; }
+.marca { font: bold 30px Georgia, serif; letter-spacing: -1px; }
+.marca span, .secao-cabecalho h2 span { color: var(--laranja); }
+.cabecalho { border-bottom: 1px solid var(--linha); }
+.cabecalho-conteudo { display: flex; align-items: center; gap: 65px; min-height: 86px; }
+.cabecalho nav { display: flex; gap: 28px; font-size: 13px; }
+.cabecalho nav a:hover { color: var(--laranja); }
+.cabecalho-nota { margin-left: auto; color: var(--suave); font-size: 11px; }
+.sobretitulo { font-size: 10px; font-weight: bold; letter-spacing: .15em; }
+.hero { display: flex; align-items: center; gap: 50px; padding-block: 60px; }
+.hero-texto { flex: 1; }
+h1 { margin: 22px 0; font: 400 clamp(40px, 4.4vw, 62px)/1.12 Georgia, serif; letter-spacing: -2px; }
+h1 em { color: var(--laranja); }
+.hero-descricao { max-width: 390px; margin-bottom: 28px; color: var(--suave); font-size: 14px; }
+.botao { display: inline-block; padding: 13px 22px; border: 1px solid transparent; border-radius: 5px; font-size: 13px; font-weight: bold; }
+.botao-primario { color: white; background: var(--verde); }
+.botao-primario:hover { background: #285749; }
+.botao-secundario { border-color: #adbbab; background: transparent; }
+.botao-secundario:hover { background: #e5ebdf; }
+.destaque { display: flex; align-items: center; flex: 1; gap: 32px; padding: 35px; background: #e9ecdf; border-radius: 8px; }
+.capa-destaque { display: flex; flex-direction: column; justify-content: space-between; flex: 0 0 40%; min-height: 280px; padding: 18px; color: #f9e8b8; background: #ba552e; border: 5px double #e2a580; box-shadow: 8px 12px 20px #183f3525; transform: rotate(-6deg); }
+.capa-destaque small, .capa-destaque > span { font-size: 8px; letter-spacing: .08em; }
+.capa-destaque strong { font: 25px/1.2 Georgia, serif; }
+.destaque-texto { flex: 1; }
+.destaque h2 { font: 28px/1.15 Georgia, serif; margin: 18px 0; }
+.destaque-texto > p:last-child { font-size: 12px; color: #56634f; }
+.acervo { border-top: 1px solid var(--linha); padding-block: 35px 55px; }
+.secao-cabecalho { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.secao-cabecalho h2 { font: 36px/1.2 Georgia, serif; margin: 8px 0; letter-spacing: -1px; }
+.secao-cabecalho .sobretitulo { color: var(--suave); }
+.mensagem { margin: 25px 0; min-height: 25px; font-size: 12px; color: var(--suave); }
+.catalogo { display: flex; flex-wrap: wrap; gap: 32px 26px; }
+.livro { flex: 0 0 calc((100% - 78px) / 4); min-width: 0; }
+.livro-capa { display: flex; align-items: center; justify-content: center; min-height: 270px; padding: 30px; color: #f9e8b8; background: #ba552e; border: 9px solid #eeece4; outline: 1px solid var(--linha); outline-offset: -1px; border-radius: 7px; }
+.livro-capa span { width: 100%; padding-block: 22px; border-block: 1px solid currentColor; font: 25px/1.25 Georgia, serif; overflow-wrap: anywhere; }
+.livro:nth-child(4n + 2) .livro-capa { background: #e4cf91; color: #354f62; }
+.livro:nth-child(4n + 3) .livro-capa { background: #35565d; color: #f5dbac; }
+.livro:nth-child(4n + 4) .livro-capa { background: #d7a248; color: #263d38; }
+.livro-info { padding: 16px 2px 0; }
+.livro-categoria { font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--laranja); margin: 0 0 8px; }
+.livro-titulo { margin: 0 0 7px; font: 22px/1.25 Georgia, serif; overflow-wrap: anywhere; }
+.livro-autor { font-size: 12px; color: var(--suave); margin: 0 0 12px; overflow-wrap: anywhere; }
+.status { padding-top: 10px; border-top: 1px solid var(--linha); font-size: 11px; }
+.nota-api { margin: 35px 0 0; max-width: 820px; color: var(--suave); font-size: 12px; }
+.rodape { padding-block: 32px; border-top: 1px solid var(--linha); background: #eeeee5; }
+.rodape-conteudo { display: flex; align-items: center; justify-content: space-between; gap: 25px; }
+.rodape p { color: var(--suave); font-size: 11px; }
+@media (max-width: 1000px) {
+  .cabecalho-nota { display: none; }
+  .cabecalho-conteudo { justify-content: space-between; }
+  .hero { gap: 25px; }
+  .destaque { padding: 25px; gap: 24px; }
+  .capa-destaque { min-height: 240px; padding: 12px; }
+  .capa-destaque strong { font-size: 21px; }
+}
+@media (max-width: 760px) {
+  .container { width: calc(100% - 40px); }
+  .hero { flex-direction: column; align-items: stretch; padding-block: 30px; gap: 30px; }
+  .hero h1 { font-size: 48px; }
+  .destaque { padding: 30px; }
+  .capa-destaque { flex-basis: 32%; }
+  .secao-cabecalho { align-items: flex-start; flex-direction: column; gap: 15px; }
+  .catalogo { gap: 28px 20px; }
+  .livro { flex-basis: calc((100% - 20px) / 2); }
+  .livro-capa { min-height: 240px; padding: 20px; }
+  .rodape-conteudo { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
+@media (max-width: 420px) {
+  .container { width: calc(100% - 32px); }
+  .cabecalho-conteudo { flex-direction: column; justify-content: center; gap: 10px; padding-block: 18px; }
+  .cabecalho nav { font-size: 12px; }
+  .hero h1 { font-size: 42px; }
+  .destaque { gap: 22px; padding: 25px 20px; }
+  .destaque h2 { font-size: 25px; }
+  .capa-destaque { min-height: 220px; }
+  .capa-destaque strong { font-size: 19px; }
+  .secao-cabecalho h2 { font-size: 31px; }
+  .livro-capa { min-height: 220px; padding: 18px; }
+  .livro-capa span { font-size: 20px; }
+  .livro-titulo { font-size: 20px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

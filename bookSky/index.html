@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Entrelinhas: um acervo de histórias para descobrir sua próxima leitura.">
+  <meta name="theme-color" content="#183f35">
+  <title>Entrelinhas — Acervo Livre</title>
+  <link rel="stylesheet" href="style/style.css">
+  <script src="script/script.js" defer></script>
+</head>
+<body>
+  <a class="pular" href="#acervo">Pular para o acervo</a>
+  <header class="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a class="marca" href="#inicio">entrelinhas<span>.</span></a>
+      <nav aria-label="Navegação principal">
+        <a href="#acervo">Nosso acervo</a>
+        <a href="#sobre">A biblioteca</a>
+      </nav>
+      <span class="cabecalho-nota">Um livro. Muitos caminhos.</span>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero container" aria-labelledby="titulo-inicio">
+      <div class="hero-texto">
+        <p class="sobretitulo">BIBLIOTECA ABERTA À CURIOSIDADE</p>
+        <h1 id="titulo-inicio">Entre uma página<br>e outra, <em>um mundo.</em></h1>
+        <p class="hero-descricao">Histórias para sair do lugar sem sair de onde você está. Encontre sua próxima leitura no nosso acervo.</p>
+        <a class="botao botao-primario" href="#acervo">Explorar o acervo ↗</a>
+      </div>
+      <article class="destaque" aria-labelledby="titulo-destaque">
+        <div class="capa-destaque" role="img" aria-label="Capa tipográfica de Dom Casmurro">
+          <small>ENTRELINHAS / 01</small>
+          <strong>DOM<br>CASMURRO</strong>
+          <span>MACHADO DE ASSIS</span>
+        </div>
+        <div class="destaque-texto">
+          <p class="sobretitulo">A ESCOLHA DA VEZ</p>
+          <h2 id="titulo-destaque">Um narrador.<br>Muitas dúvidas.</h2>
+          <p>Bentinho revisita sua juventude e a relação com Capitu. Entre lembranças e suspeitas, Machado de Assis deixa ao leitor a tarefa de interpretar a história.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="acervo container" id="acervo" aria-labelledby="titulo-acervo">
+      <div class="secao-cabecalho">
+        <div>
+          <p class="sobretitulo">SUA PRÓXIMA DESCOBERTA</p>
+          <h2 id="titulo-acervo">A estante está aberta<span>.</span></h2>
+        </div>
+        <button class="botao botao-secundario" id="carregar-api" type="button">Carregar exemplos da API ↗</button>
+      </div>
+      <p class="mensagem" id="mensagem" role="status" aria-live="polite">Oito livros da biblioteca. Os status são exemplos, sem empréstimo real.</p>
+
+      <!-- Ponto de integração: o JavaScript vai criar os cards dentro deste contêiner. -->
+      <div class="catalogo" id="catalogo" aria-label="Livros do acervo">
+        <article class="livro">
+          <div class="livro-capa" aria-hidden="true"><span>Dom Casmurro</span></div>
+          <div class="livro-info"><p class="livro-categoria">Romance</p><h3 class="livro-titulo">Dom Casmurro</h3><p class="livro-autor">Machado de Assis</p><p class="status">Disponível</p></div>
+        </article>
+        <article class="livro">
+          <div class="livro-capa" aria-hidden="true"><span>Alice no País das Maravilhas</span></div>
+          <div class="livro-info"><p class="livro-categoria">Fantasia</p><h3 class="livro-titulo">Alice no País das Maravilhas</h3><p class="livro-autor">Lewis Carroll</p><p class="status">Disponível</p></div>
+        </article>
+        <article class="livro">
+          <div class="livro-capa" aria-hidden="true"><span>O Cortiço</span></div>
+          <div class="livro-info"><p class="livro-categoria">Romance</p><h3 class="livro-titulo">O Cortiço</h3><p class="livro-autor">Aluísio Azevedo</p><p class="status">Emprestado</p></div>
+        </article>
+        <article class="livro">
+          <div class="livro-capa" aria-hidden="true"><span>A Volta ao Mundo em 80 Dias</span></div>
+          <div class="livro-info"><p class="livro-categoria">Aventura</p><h3 class="livro-titulo">A Volta ao Mundo em 80 Dias</h3><p class="livro-autor">Jules Verne</p><p class="status">Disponível</p></div>
+        </article>
+        <article class="livro">
+          <div class="livro-capa" aria-hidden="true"><span>Pequenos Recomeços</span></div>
+          <div class="livro-info"><p class="livro-categoria">Contos</p><h3 class="livro-titulo">Pequenos Recomeços</h3><p class="livro-autor">Biblioteca Entrelinhas · obra fictícia</p><p class="status">Disponível</p></div>
+        </article>
+        <article class="livro">
+          <div class="livro-capa" aria-hidden="true"><span>O Jardim Secreto</span></div>
+          <div class="livro-info"><p class="livro-categoria">Fantasia</p><h3 class="livro-titulo">O Jardim Secreto</h3><p class="livro-autor">Frances Hodgson Burnett</p><p class="status">Emprestado</p></div>
+        </article>
+        <article class="livro">
+          <div class="livro-capa" aria-hidden="true"><span>A Ilha do Tesouro</span></div>
+          <div class="livro-info"><p class="livro-categoria">Aventura</p><h3 class="livro-titulo">A Ilha do Tesouro</h3><p class="livro-autor">Robert Louis Stevenson</p><p class="status">Disponível</p></div>
+        </article>
+        <article class="livro">
+          <div class="livro-capa" aria-hidden="true"><span>Papéis Avulsos</span></div>
+          <div class="livro-info"><p class="livro-categoria">Contos</p><h3 class="livro-titulo">Papéis Avulsos</h3><p class="livro-autor">Machado de Assis</p><p class="status">Disponível</p></div>
+        </article>
+      </div>
+      <p class="nota-api">Na aula, o botão usará o JSONPlaceholder: os posts de teste serão adaptados para cards de demonstração. Eles não representam livros, autores ou disponibilidade reais.</p>
+    </section>
+  </main>
+
+  <footer class="rodape" id="sobre">
+    <div class="container rodape-conteudo">
+      <div><a class="marca" href="#inicio">entrelinhas.</a><p>Uma biblioteca de possibilidades.</p></div>
+      <p>Projeto didático de Modelagem de Sites Básicos<br>Prof. Matheus Ribeiro Ávila<br>Design e capas tipográficas autorais, feitos com HTML e CSS.</p>
+    </div>
+  </footer>
+</body>
+</html>
